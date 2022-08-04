@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "rangeFinder.h"
 
-void sortRange(int *Range, int noOfElements, int received_position) {
+void sortGivenIndexPosition(int *Range, int noOfElements, int received_position) {
 	int temp;
 	
 	for(int index = received_position+1 ; index < noOfElements; index++) {
@@ -13,9 +13,9 @@ void sortRange(int *Range, int noOfElements, int received_position) {
  	}
 }
 
-void DetectRange(int *getRange, int no_Of_Elements) {
+void sortRange(int *getRange, int no_Of_Elements) {
   	for(int index = 0; index < no_Of_Elements; index++) {
-    	sortRange(getRange, no_Of_Elements, index); 
+    	sortGivenIndexPosition(getRange, no_Of_Elements, index); 
   	}
 }
 
