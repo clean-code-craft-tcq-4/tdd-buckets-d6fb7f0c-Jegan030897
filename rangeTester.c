@@ -30,12 +30,13 @@ void Test_Case1()
 
 void Test_Case2()
 {
-  int length;
+  int length, range;
   
   int currentRange1[4] = {10,1,4,6};
   length = sizeof(currentRange1)/sizeof(currentRange1[0]);
   
-  assert(get_noofRanges(currentRange1, length) == 4);
+  range = get_noofRanges(currentRange1, length);
+  assert(range == 4);
   
   int currentRange2[10] = {10,1,4,6,2,5,3,8,9,11};
   length = sizeof(currentRange2)/sizeof(currentRange2[0]);
