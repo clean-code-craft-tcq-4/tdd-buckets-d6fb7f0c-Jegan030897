@@ -61,7 +61,7 @@ void Test_Case3()
   int Range2[10] = {10,1,4,6,2,5,3,8,9,11};
   length = sizeof(Range2)/sizeof(Range2[0]);
   
-  assert(findRange(Range2, length) == 9);
+  assert(findRange(Range2, length) == 2);
   
   int Range3[5] = {10,10,10,10,10};
   length = sizeof(Range3)/sizeof(Range3[0]);
