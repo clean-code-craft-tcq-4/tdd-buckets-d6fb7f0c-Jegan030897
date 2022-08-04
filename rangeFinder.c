@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "rangeFinder.h"
 
+int range;
+
 void sortGivenIndexPosition(int *Range, int noOfElements, int received_position) {
 	int temp;
 	
@@ -35,7 +37,6 @@ int get_noofRanges(int *getsortRange, int no_Of_Elements)
 
 void getsortedRange(int *getsortRange, int no_Of_Elements)
 {
-	int range;
 	int no_of_Ranges = 0;
 
 	range = get_noofRanges(getsortRange, no_Of_Elements);
