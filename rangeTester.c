@@ -49,9 +49,30 @@ void Test_Case2()
   assert(get_noofRanges(currentRange3, length) == 1);
 }
 
+void Test_Case3()
+{
+  int length;
+  
+  int currentRange1[4] = {10,1,4,6};
+  length = sizeof(currentRange1)/sizeof(currentRange1[0]);
+  
+  assert(findRange(currentRange1, length) == 4);
+  
+  int currentRange2[10] = {10,1,4,6,2,5,3,8,9,11};
+  length = sizeof(currentRange2)/sizeof(currentRange2[0]);
+  
+  assert(findRange(currentRange2, length) == 9);
+  
+  int currentRange3[5] = {10,10,10,10,10};
+  length = sizeof(currentRange3)/sizeof(currentRange3[0]);
+  
+  assert(findRange(currentRange3, length) == 1);
+}
+
 int main()
 {
   Test_Case0();
   Test_Case1();
-  //Test_Case2();
+  Test_Case2();
+  Test_Case3();
 }
