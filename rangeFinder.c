@@ -19,4 +19,37 @@ void sortRange(int *getRange, int no_Of_Elements) {
   	}
 }
 
+void getsortedRange(int *getsortRange, int no_Of_Elements)
+{
+	int startRange;
+	int endRange;
+	static int rangeCounter = 1;
+	
+	startRange = getsortRange[0]; 
+	
+	for(int index = 0; index < no_Of_Elements; index++) {
+	if((getsortRange[index] == getsortRange[index+1]) || (getsortRange[index]+1 == getsortRange[index+1]))
+	{
+		endRange = getsortRange[index+1];
+		++rangeCounter;
+	}
+ 	else
+	{
+		if(rangeCounter == 1)
+		{
+		printf("adc");
+		}
+		else
+		{
+			printf("adc");
+		}
+	}
+}
+
+void findRange(int *receiveRange, int no_Of_Elements)
+{
+	sortRange(receiveRange, no_Of_Elements);
+	getsortedRange(receiveRange, no_Of_Elements);
+}
+
 
