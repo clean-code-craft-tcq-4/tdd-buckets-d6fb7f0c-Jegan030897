@@ -59,7 +59,7 @@ void getsortedRange(int *getsortRange, int no_Of_Elements)
 	}
 }
 
-void findRange(int *receiveRange, int no_Of_Elements)
+int findRange(int *receiveRange, int no_Of_Elements)
 {
 	sortRange(receiveRange, no_Of_Elements);
 	getsortedRange(receiveRange, no_Of_Elements);
