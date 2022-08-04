@@ -25,7 +25,7 @@ int get_noofRanges(int *getsortRange, int no_Of_Elements)
 	
 	for(int index = 0; index < no_Of_Elements; index++)
 	{
-		if((getsortRange[index] != getsortRange[index+1]) || (getsortRange[index]+1 != getsortRange[index+1]))
+		if((getsortRange[index] != getsortRange[index+1]) && (getsortRange[index]+1 != getsortRange[index+1]))
 		{
 			++no_ofRanges;	
 		}
