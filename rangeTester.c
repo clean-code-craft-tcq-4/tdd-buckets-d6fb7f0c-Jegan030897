@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-Test_Case0("sort received index position")
+Test_Case0()
 {
   int currentRange[4] = {10,1,4,6};
   int sortedRange[4] = {1,10,4,6};
@@ -12,4 +12,9 @@ Test_Case0("sort received index position")
   {
     assert(currentRange[index] == sortedRange[0]);
   }
+}
+
+int main()
+{
+  Test_Case0();
 }
