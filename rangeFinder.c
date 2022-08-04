@@ -23,7 +23,7 @@ int get_noofRanges(int *getsortRange, int no_Of_Elements)
 {
 	int no_ofRanges = 0;
 	
-	for(int index = 0; index < no_Of_Elements; index++)
+	for(int index = 0; index < no_Of_Elements-1; index++)
 	{
 		if((getsortRange[index] != getsortRange[index+1]) && (getsortRange[index]+1 != getsortRange[index+1]))
 		{
@@ -44,7 +44,7 @@ void getsortedRange(int *getsortRange, int no_Of_Elements)
 	
 	rangeList[no_of_Ranges].startRange = getsortRange[0]; 
 	
-	for(int index = 0; index < no_Of_Elements; index++) {
+	for(int index = 0; index < no_Of_Elements-1; index++) {
 		if((getsortRange[index] == getsortRange[index+1]) || (getsortRange[index]+1 == getsortRange[index+1]))
 		{
 			rangeList[no_of_Ranges].endRange = getsortRange[index+1];
