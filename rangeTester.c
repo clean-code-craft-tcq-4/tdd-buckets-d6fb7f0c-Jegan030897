@@ -46,7 +46,7 @@ void Test_Case2()
   int currentRange3[5] = {10,10,10,10,10};
   length = sizeof(currentRange3)/sizeof(currentRange3[0]);
   
-  assert(get_noofRanges(currentRange3, length) == 0);
+  assert(get_noofRanges(currentRange3, length) == 1);
 }
 
 int main()
