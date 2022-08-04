@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "rangeFinder.h"
 
 void sortRange(int *Range, int noOfElements, int received_position) {
 	int temp;
