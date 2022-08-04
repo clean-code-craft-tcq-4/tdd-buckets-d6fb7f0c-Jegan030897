@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include "rangeFinder.h"
 
-int no_of_Ranges;
-rangeFinder_s rangeList[]; 
+int range; 
 
 void sortGivenIndexPosition(int *Range, int noOfElements, int received_position) {
 	int temp;
@@ -21,7 +20,7 @@ void sortRange(int *getRange, int no_Of_Elements) {
     	sortGivenIndexPosition(getRange, no_Of_Elements, index); 
   	}
 }
-/*
+
 int get_noofRanges(int *getsortRange, int no_Of_Elements)
 {
 	int no_ofRanges = 1;
@@ -35,14 +34,14 @@ int get_noofRanges(int *getsortRange, int no_Of_Elements)
 	}
 	return no_ofRanges;
 }
-*/
+
 void getsortedRange(int *getsortRange, int no_Of_Elements)
 {
-	no_of_Ranges = 0;
+	int no_of_Ranges = 0;
 
-	//range = get_noofRanges(getsortRange, no_Of_Elements);
+	range = get_noofRanges(getsortRange, no_Of_Elements);
 	
-	//rangeFinder_s rangeList[range]; 
+	rangeFinder_s rangeList[range]; 
 	
 	rangeList[no_of_Ranges].startRange = getsortRange[0]; 
 	
