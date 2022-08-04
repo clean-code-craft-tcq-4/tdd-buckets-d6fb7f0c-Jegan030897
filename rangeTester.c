@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
+#include "rangeFinder.h"
 
-Test_Case0()
+void Test_Case0()
 {
   int currentRange[4] = {10,1,4,6};
   int sortedRange[4] = {1,10,4,6};
