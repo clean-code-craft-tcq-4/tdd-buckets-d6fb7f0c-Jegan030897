@@ -32,20 +32,20 @@ void Test_Case2()
 {
   int length;
   
-  int currentRange[4] = {10,1,4,6};
-  length = sizeof(currentRange)/sizeof(currentRange[0]);
+  int currentRange1[4] = {10,1,4,6};
+  length = sizeof(currentRange1)/sizeof(currentRange1[0]);
   
-  assert(get_noofRanges(currentRange, length) == 4);
+  assert(get_noofRanges(currentRange1, length) == 4);
   
-  int currentRange[10] = {10,1,4,6,2,5,3,8,9,11};
-  length = sizeof(currentRange)/sizeof(currentRange[0]);
+  int currentRange2[10] = {10,1,4,6,2,5,3,8,9,11};
+  length = sizeof(currentRange2)/sizeof(currentRange2[0]);
   
-  assert(get_noofRanges(currentRange, length) == 2);
+  assert(get_noofRanges(currentRange2, length) == 2);
   
-  int currentRange[5] = {10,10,10,10,10};
-  length = sizeof(currentRange)/sizeof(currentRange[0]);
+  int currentRange3[5] = {10,10,10,10,10};
+  length = sizeof(currentRange3)/sizeof(currentRange3[0]);
   
-  assert(get_noofRanges(currentRange, length) == 1);
+  assert(get_noofRanges(currentRange3, length) == 1);
 }
 
 int main()
