@@ -44,6 +44,7 @@ void getsortedRange(int *getsortRange, int no_Of_Elements)
 			printf("adc");
 		}
 	}
+	}
 }
 
 void findRange(int *receiveRange, int no_Of_Elements)
