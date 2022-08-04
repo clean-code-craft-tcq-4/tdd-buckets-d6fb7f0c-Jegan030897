@@ -40,12 +40,12 @@ void Test_Case2()
   int currentRange2[10] = {10,1,4,6,2,5,3,8,9,11};
   length = sizeof(currentRange2)/sizeof(currentRange2[0]);
   
-  assert(get_noofRanges(currentRange2, length) == 2);
+  assert(get_noofRanges(currentRange2, length) == 8);
   
   int currentRange3[5] = {10,10,10,10,10};
   length = sizeof(currentRange3)/sizeof(currentRange3[0]);
   
-  assert(get_noofRanges(currentRange3, length) == 1);
+  assert(get_noofRanges(currentRange3, length) == 0);
 }
 
 int main()
