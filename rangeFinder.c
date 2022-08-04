@@ -21,7 +21,7 @@ void sortRange(int *getRange, int no_Of_Elements) {
 
 int get_noofRanges(int *getsortRange, int no_Of_Elements)
 {
-	no_ofRanges = 0;
+	int no_ofRanges = 0;
 	
 	for(int index = 0; index < no_Of_Elements; index++)
 	{
