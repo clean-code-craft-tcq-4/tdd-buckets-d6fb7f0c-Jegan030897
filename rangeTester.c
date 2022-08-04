@@ -11,7 +11,7 @@ void Test_Case0()
   
   for(int index = 0; index < length; index++)
   {
-    assert(currentRange[index] == sortedRange[0]);
+    assert(currentRange[index] == sortedRange[index]);
   }
 }
 
