@@ -59,23 +59,11 @@ void getsortedRange(int *getsortRange, int no_Of_Elements)
 	}
 }
 
-void printRange()
-{
-	for(int index = 0; index < range; index++) {
-		if(rangeList[index].endRange == 0) {
-			printf("Range: %d Counter: %d",rangeList[index].startRange, rangeList[index].rangeCounter);
-		}
-		else {
-			printf("Range: %d - %d Counter: %d",rangeList[index].startRange, rangeList[index].endRange, rangeList[index].rangeCounter);
-		}
-	}
-}
-
 void findRange(int *receiveRange, int no_Of_Elements)
 {
 	sortRange(receiveRange, no_Of_Elements);
 	getsortedRange(receiveRange, no_Of_Elements);
-	printRange();
+	return range;
 }
 
 
