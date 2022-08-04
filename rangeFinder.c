@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include "rangeFinder.h"
 
-int *startRange_a[];
-int *endRange_a[];
-int no_ofRanges = 0;
-int *rangerCounter_a[];
-
 void sortGivenIndexPosition(int *Range, int noOfElements, int received_position) {
 	int temp;
 	
@@ -24,22 +19,42 @@ void sortRange(int *getRange, int no_Of_Elements) {
   	}
 }
 
-void getsortedRange(int *getsortRange, int no_Of_Elements)
+int get_noofRanges(int *getsortRange, int no_Of_Elements)
 {
 	no_ofRanges = 0;
-	startRange_a[no_ofRanges] = getsortRange[0]; 
+	
+	for(int index = 0; index < no_Of_Elements; index++)
+	{
+		if((getsortRange[index] != getsortRange[index+1]) || (getsortRange[index]+1 != getsortRange[index+1]))
+		{
+			++no_ofRanges;	
+		}
+	}
+	return no_ofRanges;
+}
+
+void getsortedRange(int *getsortRange, int no_Of_Elements)
+{
+	int range;
+	int no_of_Ranges = 0;
+
+	range = get_noofRanges(getsortRange, no_Of_Elements);
+	
+	rangeFinder_s rangeList[range]; 
+	
+	rangeList[no_of_Ranges].startRange = getsortRange[0]; 
 	
 	for(int index = 0; index < no_Of_Elements; index++) {
-	if((getsortRange[index] == getsortRange[index+1]) || (getsortRange[index]+1 == getsortRange[index+1]))
-	{
-		endRange_a[no_ofRanges] = getsortRange[index+1];
-		++rangerCounter_a[no_ofRanges]; 
-	}
- 	else
-	{	
-		++no_ofRanges;
-		startRange_a[no_ofRanges] = getsortRange[index+1];
-	}
+		if((getsortRange[index] == getsortRange[index+1]) || (getsortRange[index]+1 == getsortRange[index+1]))
+		{
+			rangeList[no_of_Ranges].endRange = getsortRange[index+1];
+			++rangeList[no_of_Ranges].rangeCounter; 
+		}
+		else
+		{	
+			++no_of_Ranges;
+			rangeList[no_of_Ranges].startRange = getsortRange[index+1];
+		}
 	}
 }
 
