@@ -1,5 +1,5 @@
 #include <stdio.h>
 
 
-void sortRange(int *Range, int noOfElements, int received_position);
-void DetectRange(int *getRange, int no_Of_Elements);
+void sortGivenIndexPosition(int *Range, int noOfElements, int received_position);
+void sortRange(int *getRange, int no_Of_Elements);
