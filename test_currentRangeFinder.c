@@ -90,18 +90,18 @@ void Test_Case_3()
 
 void Test_Case_4()
 {
-  int currentRange[10] = {10,1,4,6,2,5,3,8,9,6}, no_of_Ranges;
-  int start_Range[2] = {1,8}, end_Range[2] = {6,10}, range_Counter[2] = {7, 3};
+  int currentRange_1[10] = {10,1,4,6,2,5,3,8,9,6}, no_of_Ranges;
+  int start_Range_1[2] = {1,8}, end_Range_1[2] = {6,10}, range_Counter_1[2] = {7, 3};
   
-  int length = sizeof(currentRange)/sizeof(currentRange[0]);
+  int length = sizeof(currentRange_1)/sizeof(currentRange_1[0]);
   
-  no_of_Ranges = find_currentRangeList(currentRange, length);
+  no_of_Ranges = find_currentRangeList(currentRange_1, length);
   
   for(int index = 0; index < no_of_Ranges; index++)
   {
-    assert(current_rangeList[index].startRange == start_Range[index]);
-    //assert(current_rangeList[index].endRange == end_Range[index]);
-    //assert(current_rangeList[index].rangeCounter == range_Counter[index]);
+    assert(current_rangeList[index].startRange == start_Range_1[index]);
+    assert(current_rangeList[index].endRange == end_Range_1[index]);
+    assert(current_rangeList[index].rangeCounter == range_Counter_1[index]);
   }
 }
 
