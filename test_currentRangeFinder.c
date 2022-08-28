@@ -108,7 +108,7 @@ void Test_Case_4A()
 void Test_Case_4B()
 {
   int currentRange_2[5] = {10,10,10,10,10}, no_of_Ranges;
-  int start_Range_2[1] = {10}, end_Range_2[1] = {0}, range_Counter_2[1] = {5};
+  int start_Range_2[1] = {10}, end_Range_2[1] = {10}, range_Counter_2[1] = {5};
   
   int length = sizeof(currentRange_2)/sizeof(currentRange_2[0]);
   
