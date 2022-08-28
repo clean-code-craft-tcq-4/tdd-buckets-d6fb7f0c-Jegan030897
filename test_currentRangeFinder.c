@@ -8,7 +8,7 @@ void Test_Case0()
   int currentRange[4] = {10,1,4,6};
   int sorted_currentRange[4] = {1,4,6,10};
   int length = sizeof(currentRange)/sizeof(currentRange[0]);
-  sort_currentRangeList(currentRange, length, 0);
+  sort_currentRangeList(currentRange, length);
   
   for(int index = 0; index < length; index++)
   {
