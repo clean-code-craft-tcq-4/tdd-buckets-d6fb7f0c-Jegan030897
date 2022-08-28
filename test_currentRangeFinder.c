@@ -24,6 +24,7 @@ void Test_Case0()
   }
 }
 
+/* To get no of Ranges and this range used to update structure member default value */
 void Test_Case1()
 {
   int currentRange_1[4] = {1,4,6,10}, currentRange_2[10] = {1,2,3,4,5,6,6,8,9,10}, currentRange_3[5] = {10,10,10,10,10};
@@ -81,7 +82,7 @@ void Test_Case3()
 int main()
 {
   Test_Case0();
-  //Test_Case1();
+  Test_Case1();
   //Test_Case2();
   //Test_Case3();
 }
