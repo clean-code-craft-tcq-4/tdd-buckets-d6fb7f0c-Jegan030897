@@ -83,9 +83,9 @@ void Test_Case_3()
   assert(current_rangeList[0].startRange == start_Range[0]);
   assert(current_rangeList[0].endRange == end_Range[0]);
   assert(current_rangeList[0].rangeCounter == range_Counter[0]);
-  assert(current_rangeList[1].startRange == start_Range[0]);
-  assert(current_rangeList[1].endRange == end_Range[0]);
-  assert(current_rangeList[1].rangeCounter == range_Counter[0]);
+  assert(current_rangeList[1].startRange == start_Range[1]);
+  assert(current_rangeList[1].endRange == end_Range[1]);
+  assert(current_rangeList[1].rangeCounter == range_Counter[1]);
 }
 
 int main()
