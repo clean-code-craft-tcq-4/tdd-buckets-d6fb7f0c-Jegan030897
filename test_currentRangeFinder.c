@@ -70,6 +70,24 @@ void Test_Case_2A()
   }
 }
 
+/* Testing range counter, start and end range based on sorted input */
+void Test_Case_3()
+{
+  int currentRange[10] = {1,2,3,4,5,6,6,8,9,10};
+  int start_Range[2] = {1,8}, end_Range[2] = {6,10}, range_Counter[2] = {7, 3};
+  
+  int length = sizeof(currentRange)/sizeof(currentRange[0]);
+  
+  get_currentRangesandCounter(currentRange, length);
+  
+  for(int index = 0; index < no_of_Ranges; index++)
+  {
+    assert(current_rangeList[index].startRange == start_Range[index]);
+    assert(current_rangeList[index].endRange == end_Range[index]);
+    assert(current_rangeList[index].rangeCounter == range_Counter[index]);
+  }
+}
+
 int main()
 {
   Test_Case0();
@@ -77,5 +95,5 @@ int main()
   Test_Case_1B();
   Test_Case_1C();
   Test_Case_2A();
-  //Test_Case3();
+  Test_Case_3();
 }
