@@ -5,14 +5,19 @@
 /* sorting given current Ranges */
 void Test_Case0()
 {
-  int currentRange[4] = {10,1,4,6};
-  int sorted_currentRange[4] = {1,4,6,10};
-  int length = sizeof(currentRange)/sizeof(currentRange[0]);
+  int currentRange_1[4] = {10,1,4,6}, currentRange_2[10] = {10,1,4,6,2,5,3,8,9,6};
+  int sorted_currentRange_1[4] = {1,4,6,10}, sorted_currentRange_2[10] = {1,2,3,4,5,6,6,8,9,10};
+  
+  int length = sizeof(currentRange_1)/sizeof(currentRange_1[0]);
+  int length1 = sizeof(currentRange_2)/sizeof(currentRange_2[0]);
+  
+  sort_currentRangeList(currentRange_1, length);
   sort_currentRangeList(currentRange, length);
   
   for(int index = 0; index < length; index++)
   {
-    assert(currentRange[index] == sorted_currentRange[index]);
+    assert(currentRange_1[index] == sorted_currentRange_1[index]);
+    assert(currentRange_2[index] == sorted_currentRange_2[index]);
   }
 }
 #if 0
