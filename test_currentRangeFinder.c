@@ -80,12 +80,12 @@ void Test_Case_3()
   
   get_currentRangesandCounter(currentRange, length);
   
-  for(int index = 0; index < no_of_Ranges; index++)
-  {
-    assert(current_rangeList[index].startRange == start_Range[index]);
-    assert(current_rangeList[index].endRange == end_Range[index]);
-    assert(current_rangeList[index].rangeCounter == range_Counter[index]);
-  }
+  assert(current_rangeList[0].startRange == start_Range[0]);
+  assert(current_rangeList[0].endRange == end_Range[0]);
+  assert(current_rangeList[0].rangeCounter == range_Counter[0]);
+  assert(current_rangeList[1].startRange == start_Range[0]);
+  assert(current_rangeList[1].endRange == end_Range[0]);
+  assert(current_rangeList[1].rangeCounter == range_Counter[0]);
 }
 
 int main()
