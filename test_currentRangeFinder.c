@@ -56,17 +56,17 @@ void Test_Case3()
   int Range1[4] = {10,1,4,6};
   length = sizeof(Range1)/sizeof(Range1[0]);
   
-  assert(findRange(Range1, length) == 4);
+  assert(find_currentRangeList(Range1, length) == 4);
   
   int Range2[10] = {10,1,4,6,2,5,3,8,9,11};
   length = sizeof(Range2)/sizeof(Range2[0]);
   
-  assert(findRange(Range2, length) == 2);
+  assert(find_currentRangeList(Range2, length) == 2);
   
   int Range3[5] = {10,10,10,10,10};
   length = sizeof(Range3)/sizeof(Range3[0]);
   
-  assert(findRange(Range3, length) == 1);
+  assert(find_currentRangeList(Range3, length) == 1);
 }
 
 int main()
