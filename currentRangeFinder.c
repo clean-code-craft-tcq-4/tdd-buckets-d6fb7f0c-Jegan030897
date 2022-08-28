@@ -35,7 +35,7 @@ int get_noofRanges(int *getsortRange, int no_Of_Elements)
 	return no_ofRanges;
 }
 
-void get_currentRangeList(int *getsorted_currentRange, int no_Of_Elements)
+void get_currentRangesandCounter(int *getsorted_currentRange, int no_Of_Elements)
 {
 	int no_of_currentRanges = 0;
 	
@@ -73,7 +73,7 @@ int find_currentRangeList(int *received_currentRanges, int no_Of_Elements)
 	int noOf_currentRanges = get_noofRanges(received_currentRanges, no_Of_Elements);
 	update_RangefinderStruct_Defaultvalue(noOf_currentRanges);
 	
-	get_currentRangeList(received_currentRanges, no_Of_Elements);
+	get_currentRangesandCounter(received_currentRanges, no_Of_Elements);
 	return noOf_currentRanges;
 }
 
