@@ -12,7 +12,7 @@ void Test_Case0()
   int length1 = sizeof(currentRange_2)/sizeof(currentRange_2[0]);
   
   sort_currentRangeList(currentRange_1, length);
-  sort_currentRangeList(currentRange, length);
+  sort_currentRangeList(currentRange_2, length1);
   
   for(int index = 0; index < length; index++)
   {
