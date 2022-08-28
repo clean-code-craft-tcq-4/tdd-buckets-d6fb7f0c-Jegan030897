@@ -31,11 +31,9 @@ void Test_Case1()
   
   int length = sizeof(currentRange_1)/sizeof(currentRange_1[0]);
   int length1 = sizeof(currentRange_2)/sizeof(currentRange_2[0]);
-  int length2 = sizeof(currentRange_3)/sizeof(currentRange_3[0]);
   
   assert(get_noofRanges(currentRange_1, length) == 4);
   assert(get_noofRanges(currentRange_2, length1) == 2);
-  assert(get_noofRanges(currentRange_3, length2) == 1);
 }
 #if 0
 void Test_Case2()
