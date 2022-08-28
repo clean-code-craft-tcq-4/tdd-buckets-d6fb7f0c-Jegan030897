@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-#include "rangeFinder.h"
+#include "currentRangeFinder.h"
 
 void Test_Case0()
 {
