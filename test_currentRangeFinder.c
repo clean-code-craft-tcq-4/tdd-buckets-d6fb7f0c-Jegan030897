@@ -88,7 +88,7 @@ void Test_Case_3()
   assert(current_rangeList[1].rangeCounter == range_Counter[1]);
 }
 
-void Test_Case_4()
+void Test_Case_4A()
 {
   int currentRange_1[10] = {10,1,4,6,2,5,3,8,9,6}, no_of_Ranges;
   int start_Range_1[2] = {1,8}, end_Range_1[2] = {6,10}, range_Counter_1[2] = {7, 3};
@@ -105,6 +105,40 @@ void Test_Case_4()
   }
 }
 
+void Test_Case_4B()
+{
+  int currentRange_2[5] = {10,10,10,10,10}, no_of_Ranges;
+  int start_Range_2[1] = {10}, end_Range_2[1] = {0}, range_Counter_2[1] = {5};
+  
+  int length = sizeof(currentRange_2)/sizeof(currentRange_2[0]);
+  
+  no_of_Ranges = find_currentRangeList(currentRange_2, length);
+  
+  for(int index = 0; index < no_of_Ranges; index++)
+  {
+    assert(current_rangeList[index].startRange == start_Range_2[index]);
+    assert(current_rangeList[index].endRange == end_Range_2[index]);
+    assert(current_rangeList[index].rangeCounter == range_Counter_2[index]);
+  }
+}
+
+void Test_Case_4C()
+{
+  int currentRange_3[4] = {10,1,4,6}, no_of_Ranges;
+  int start_Range_3[4] = {1,4,6,10}, end_Range_3[4] = {0,0,0,0}, range_Counter_3[4] = {1,1,1,1};
+  
+  int length = sizeof(currentRange_3)/sizeof(currentRange_3[0]);
+  
+  no_of_Ranges = find_currentRangeList(currentRange_3, length);
+  
+  for(int index = 0; index < no_of_Ranges; index++)
+  {
+    assert(current_rangeList[index].startRange == start_Range_3[index]);
+    assert(current_rangeList[index].endRange == end_Range_3[index]);
+    assert(current_rangeList[index].rangeCounter == range_Counter_3[index]);
+  }
+}
+
 int main()
 {
   Test_Case0();
@@ -113,5 +147,7 @@ int main()
   Test_Case_1C();
   Test_Case_2A();
   Test_Case_3();
-  Test_Case_4();
+  Test_Case_4A();
+  Test_Case_4B();
+  Test_Case_4C();
 }
