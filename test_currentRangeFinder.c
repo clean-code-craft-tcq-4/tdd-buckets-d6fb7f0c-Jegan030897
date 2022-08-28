@@ -52,54 +52,30 @@ void Test_Case_1C()
   assert(get_noofRanges(currentRange, length) == 1);
 }
 
-#if 0
-void Test_Case2()
+/* updating structure member default value based on Ranges */
+void Test_Case_2A()
 {
-  int length, range;
+  int currentRange[10] = {1,2,3,4,5,6,6,8,9,10}, no_of_Ranges;
   
-  int currentRange1[4] = {10,1,4,6};
-  length = sizeof(currentRange1)/sizeof(currentRange1[0]);
+  int length = sizeof(currentRange)/sizeof(currentRange[0]);
   
-  range = get_noofRanges(currentRange1, length);
-  assert(range == 4);
+  no_of_Ranges = get_noofRanges(currentRange, length);
+  update_RangefinderStruct_Defaultvalue(no_of_Ranges);
   
-  int currentRange2[10] = {10,1,4,6,2,5,3,8,9,11};
-  length = sizeof(currentRange2)/sizeof(currentRange2[0]);
-  
-  assert(get_noofRanges(currentRange2, length) == 9);
-  
-  int currentRange3[5] = {10,10,10,10,10};
-  length = sizeof(currentRange3)/sizeof(currentRange3[0]);
-  
-  assert(get_noofRanges(currentRange3, length) == 1);
+  for(int index = 0; index < no_of_Ranges; index++)
+  {
+    assert(current_rangeList[index].startRange == 0);
+    assert(current_rangeList[index].endRange == 0);
+    assert(current_rangeList[index].rangeCounter == 1);
+  }
 }
 
-void Test_Case3()
-{
-  int length;
-  
-  int Range1[4] = {10,1,4,6};
-  length = sizeof(Range1)/sizeof(Range1[0]);
-  
-  assert(find_currentRangeList(Range1, length) == 4);
-  
-  int Range2[10] = {10,1,4,6,2,5,3,8,9,11};
-  length = sizeof(Range2)/sizeof(Range2[0]);
-  
-  assert(find_currentRangeList(Range2, length) == 2);
-  
-  int Range3[5] = {10,10,10,10,10};
-  length = sizeof(Range3)/sizeof(Range3[0]);
-  
-  assert(find_currentRangeList(Range3, length) == 1);
-}
-#endif
 int main()
 {
   Test_Case0();
   Test_Case_1A();
   Test_Case_1B();
   Test_Case_1C();
-  //Test_Case2();
+  Test_Case_2A();
   //Test_Case3();
 }
