@@ -23,20 +23,20 @@ void Test_Case0()
     assert(currentRange_3[index] == sorted_currentRange_3[index]);
   }
 }
-#if 0
+
 void Test_Case1()
 {
-  int currentRange[4] = {10,1,4,6};
-  int sortedRange[4] = {10,1,4,6};
-  int length = sizeof(currentRange)/sizeof(currentRange[0]);
-  sortGivenIndexPosition(currentRange, length, 1);
+  int currentRange_1[4] = {1,4,6,10}, currentRange_2[10] = {1,2,3,4,5,6,6,8,9,10}, currentRange_3[5] = {10,10,10,10,10};
   
-  for(int index = 0; index < length; index++)
-  {
-    assert(currentRange[index] == sortedRange[index]);
-  }
+  int length = sizeof(currentRange_1)/sizeof(currentRange_1[0]);
+  int length1 = sizeof(currentRange_2)/sizeof(currentRange_2[0]);
+  int length2 = sizeof(currentRange_3)/sizeof(currentRange_3[0]);
+  
+  assert(get_noofRanges(currentRange_1, length) == 4);
+  assert(get_noofRanges(currentRange_2, length1) == 2);
+  assert(get_noofRanges(currentRange_3, length2) == 1);
 }
-
+#if 0
 void Test_Case2()
 {
   int length, range;
