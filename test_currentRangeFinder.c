@@ -149,7 +149,7 @@ void Test_Case_GetSensorConfig()
   
   assert(received_SensorConfig != NULL);
   assert(received_SensorConfig->ADC_Resolution == 4095);
-  assert(received_SensorConfig->sensor_Range == 10);
+  assert(received_SensorConfig->sensor_AmpereRange == 10);
 }
 
 void Test_Case_ADC_data_AssertCheck()
@@ -157,9 +157,23 @@ void Test_Case_ADC_data_AssertCheck()
   int ADC_channelID = 0, ADC_data[6] = {1025,4094,4097,10,0,-1};
   int error_status[6] = {IN_RANGE, IN_RANGE, OUTOFF_RANGE, IN_RANGE, OUTOFF_RANGE, OUTOFF_RANGE};
   
+  update_sensorConfigObj();
+  
   for(int index = 0; index < 6; index++)
   {
     assert(ADC_data_AssertCheck(ADC_data[index], ADC_channelID) == error_status[index]);
+  }
+}
+
+void Test_Case_ADCCount_into_Amps()
+{
+  int ADCdata[5] = {4095,0,-1,4096,1025};
+  int convertedAmp_value[5] = {10,0,0,10,2};
+  update_sensorConfigObj();
+  
+  for(int index = 0; index < 5; index++)
+  {
+    assert(convert_ADCCount_into_Amps(ADCdata[index]) == convertedAmp_value[index]);
   }
 }
 
@@ -167,6 +181,7 @@ void Test_process_ADCdata()
 {
   Test_Case_GetSensorConfig();
   Test_Case_ADC_data_AssertCheck();
+  Test_Case_ADCCount_into_Amps();
 }
 
 int main()
