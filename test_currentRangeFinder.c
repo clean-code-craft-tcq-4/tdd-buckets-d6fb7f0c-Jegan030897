@@ -152,9 +152,21 @@ void Test_Case_GetSensorConfig()
   assert(received_SensorConfig->sensor_Range == 10);
 }
 
+void Test_Case_ADC_data_AssertCheck()
+{
+  int ADC_channelID = 0, ADC_data[6] = {1025,4094,4097,10,0,-1};
+  int error_status[6] = {IN_RANGE, IN_RANGE, OUTOFF_RANGE, IN_RANGE, OUTOFF_RANGE, OUTOFF_RANGE};
+  
+  for(int index = 0; index < 6; index++)
+  {
+    assert(ADC_data_AssertCheck(ADC_data[index], ADC_channelID) == error_status[index]);
+  }
+}
+
 void Test_process_ADCdata()
 {
   Test_Case_GetSensorConfig();
+  Test_Case_ADC_data_AssertCheck();
 }
 
 int main()
