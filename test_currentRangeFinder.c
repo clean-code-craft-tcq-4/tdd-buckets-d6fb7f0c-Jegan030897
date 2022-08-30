@@ -178,11 +178,24 @@ void Test_Case_ADCCount_into_Amps()
   }
 }
 
+void Test_Case_GetandProcessSensor_ADC_data()
+{
+  int ADCdata[5] = {4095,0,-1,4096,1025}, ADC_channelID = 0;
+  int convertedAmp_value[5] = {10,0,0,10,2};
+  
+  for(int index = 0; index < 5; index++)
+  {
+    GetandProcessSensor_ADC_data(ADCdata[index]);
+    assert(convertedAmpereValue == convertedAmp_value[index]);
+  }
+}
+
 void Test_process_ADCdata()
 {
   Test_Case_GetSensorConfig();
   Test_Case_ADC_data_AssertCheck();
   Test_Case_ADCCount_into_Amps();
+  Test_Case_GetandProcessSensor_ADC_data();
 }
 
 int main()
