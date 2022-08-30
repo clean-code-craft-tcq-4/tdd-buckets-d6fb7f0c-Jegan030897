@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <assert.h>
 #include "sensor_Config.h"
 
 void Test_Case0()
