@@ -185,7 +185,7 @@ void Test_Case_GetandProcessSensor_ADC_data()
   
   for(int index = 0; index < 5; index++)
   {
-    GetandProcessSensor_ADC_data(ADCdata[index]);
+    GetandProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
     assert(convertedAmpereValue == convertedAmp_value[index]);
   }
 }
