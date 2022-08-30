@@ -37,10 +37,18 @@ void GetandProcessSensor_ADC_data(int adcData, int adc_channelID)
 	if(adcData_ErrorStatus == IN_RANGE)
 	{
 		convertedAmpereValue = convert_ADCCount_into_Amps(adcData);
-		find_currentRangeList(&convertedAmpereValue, 1);
+		find_convertedAmpere_RangeList(convertedAmpereValue);
 	}
 	else
 	{
 		convertedAmpereValue = 0xFFFF;
 	}
 }
+
+void find_convertedAmpere_RangeList(int convertedData)
+{
+	int data = convertedData;
+	find_currentRangeList(&data, 1);	
+}
+
+
