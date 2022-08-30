@@ -5,7 +5,7 @@ int convertedAmpereValue[10];
 
 const mcalConfig* received_ADC_SensorConfig;
 
-void update_sensorConfigObj()
+void update_sensorConfigObj(int adc_channelID)
 {
 	received_ADC_SensorConfig = get_sensorConfig(adc_channelID);
 }
