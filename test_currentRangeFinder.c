@@ -190,12 +190,28 @@ void Test_Case_GetandProcessSensor_ADC_data()
   }
 }
 
+void Test_Case_find_convertedAmpere_RangeList()
+{
+  int convertedAmpValue = 10;
+  int start_Range_4 = 10, end_Range_4 = 0, range_Counter_4 = 1;
+  
+  for(int index = 0; index < 3; index++)
+  {
+    find_convertedAmpere_RangeList(convertedAmpValue[index]);
+  
+    assert(current_rangeList[index].startRange == start_Range_4);
+    assert(current_rangeList[index].endRange == end_Range_4);
+    assert(current_rangeList[index].rangeCounter == range_Counter_4);  
+  }
+}
+
 void Test_process_ADCdata()
 {
   Test_Case_GetSensorConfig();
   Test_Case_ADC_data_AssertCheck();
   Test_Case_ADCCount_into_Amps();
   Test_Case_GetandProcessSensor_ADC_data();
+  Test_Case_find_convertedAmpere_RangeList();
 }
 
 int main()
