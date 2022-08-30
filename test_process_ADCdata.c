@@ -2,7 +2,7 @@
 #include <assert.h>
 #include "sensor_Config.h"
 
-void Test_Case0()
+void Test_Case_GetSensorConfig()
 {
   const mcalConfig* received_SensorConfig;
   int ADC_channelID = 0;
@@ -18,5 +18,5 @@ void Test_Case0()
 
 int main()
 {
-  Test_Case0();
+  Test_Case_GetSensorConfig();
 }
