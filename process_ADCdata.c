@@ -1,7 +1,7 @@
 #include <math.h>
 #include "sensor_Config.h"
 
-int convertedAmpereValue[10];
+int convertedAmpereValue = 0;
 
 const mcalConfig* received_ADC_SensorConfig;
 
@@ -25,4 +25,13 @@ int ADC_data_AssertCheck(int adcData, int adc_channelID)
 int convert_ADCCount_into_Amps(int adcData)
 {
  	return round((received_ADC_SensorConfig->sensor_AmpereRange * adcData) / (received_ADC_SensorConfig->ADC_Resolution));
+}
+
+void GetandProcessSensor_ADC_data(int adcData, int adc_channelID)
+{
+	int adcData_ErrorStatus;
+	
+	update_sensorConfigObj(adc_channelID);
+	adcData_ErrorStatus = ADC_data_AssertCheck(adcData, adc_channelID);
+	convertedAmpereValue = convert_ADCCount_into_Amps(adcData);
 }
