@@ -32,8 +32,8 @@ void GetandProcessSensor_ADC_data(int adcData, int adc_channelID)
 	int adcData_ErrorStatus;
 	
 	update_sensorConfigObj(adc_channelID);
-	adcData_ErrorStatus = ADC_data_AssertCheck(adcData, adc_channelID);
-	if(adcData_ErrorStatus == TRUE)
+	adcData_ErrorStatus = ADC_data_AssertCheck(adcData);
+	if(adcData_ErrorStatus == IN_RANGE)
 	{
 		convertedAmpereValue = convert_ADCCount_into_Amps(adcData);
 	}
