@@ -195,14 +195,11 @@ void Test_Case_find_convertedAmpere_RangeList()
   int convertedAmpValue = 10;
   int start_Range_4 = 10, end_Range_4 = 0, range_Counter_4 = 1;
   
-  for(int index = 0; index < 3; index++)
-  {
-    find_convertedAmpere_RangeList(convertedAmpValue[index]);
+    find_convertedAmpere_RangeList(convertedAmpValue);
   
-    assert(current_rangeList[index].startRange == start_Range_4);
-    assert(current_rangeList[index].endRange == end_Range_4);
-    assert(current_rangeList[index].rangeCounter == range_Counter_4);  
-  }
+    assert(current_rangeList[0].startRange == start_Range_4);
+    assert(current_rangeList[0].endRange == end_Range_4);
+    assert(current_rangeList[0].rangeCounter == range_Counter_4);  
 }
 
 void Test_process_ADCdata()
