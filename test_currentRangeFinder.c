@@ -161,7 +161,7 @@ void Test_Case_ADC_data_AssertCheck()
   
   for(int index = 0; index < 6; index++)
   {
-    assert(ADC_data_AssertCheck(ADC_data[index], ADC_channelID) == error_status[index]);
+    assert(ADC_data_AssertCheck(ADC_data[index]) == error_status[index]);
   }
 }
 
@@ -181,7 +181,7 @@ void Test_Case_ADCCount_into_Amps()
 void Test_Case_GetandProcessSensor_ADC_data()
 {
   int ADCdata[5] = {4095,0,-1,4096,1025}, ADC_channelID = 0;
-  int convertedAmp_value[5] = {10,0,0,10,2};
+  int convertedAmp_value[5] = {10,65535,65535,65535,2};
   
   for(int index = 0; index < 5; index++)
   {
