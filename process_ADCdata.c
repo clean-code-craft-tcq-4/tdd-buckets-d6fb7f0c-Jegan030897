@@ -37,4 +37,8 @@ void GetandProcessSensor_ADC_data(int adcData, int adc_channelID)
 	{
 		convertedAmpereValue = convert_ADCCount_into_Amps(adcData);
 	}
+	else
+	{
+		convertedAmpereValue = 0xFFFF;
+	}
 }
