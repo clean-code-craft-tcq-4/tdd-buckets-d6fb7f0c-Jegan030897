@@ -8,10 +8,10 @@ int ADC_data_AssertCheck(int adcData, int adc_channelID)
 	
 	if(adcData > 0 && adcData <= received_ADC_SensorConfig->ADC_Resolution)
 	{
-		return TRUE;
+		return IN_RANGE;
 	}
 	else
 	{
-		return FALSE;
+		return OUTOFF_RANGE;
 	}
 }
