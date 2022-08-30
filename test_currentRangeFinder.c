@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include "currentRangeFinder.h"
+#include "sensor_Config.h"
 
 /* sorting given current Ranges */
 void Test_Case0()
@@ -139,6 +140,23 @@ void Test_Case_4C()
   }
 }
 
+void Test_Case_GetSensorConfig()
+{
+  const mcalConfig* received_SensorConfig;
+  int ADC_channelID = 0;
+  
+  received_SensorConfig = get_sensorConfig(ADC_channelID);
+  
+  assert(received_SensorConfig != NULL);
+  assert(received_SensorConfig->ADC_Resolution == 4095);
+  assert(received_SensorConfig->sensor_Range == 10);
+}
+
+void Test_process_ADCdata()
+{
+  Test_Case_GetSensorConfig();
+}
+
 int main()
 {
   Test_Case0();
@@ -150,4 +168,6 @@ int main()
   Test_Case_4A();
   Test_Case_4B();
   Test_Case_4C();
+  
+  Test_process_ADCdata();
 }
