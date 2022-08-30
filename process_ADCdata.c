@@ -1,5 +1,6 @@
 #include <math.h>
 #include "sensor_Config.h"
+#include "currentRangeFinder.h"
 
 int convertedAmpereValue = 0xFFFF;
 
@@ -36,6 +37,7 @@ void GetandProcessSensor_ADC_data(int adcData, int adc_channelID)
 	if(adcData_ErrorStatus == IN_RANGE)
 	{
 		convertedAmpereValue = convert_ADCCount_into_Amps(adcData);
+		find_currentRangeList(&convertedAmpereValue, 1);
 	}
 	else
 	{
