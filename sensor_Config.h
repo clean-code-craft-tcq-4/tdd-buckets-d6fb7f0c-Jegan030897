@@ -1,7 +1,7 @@
 #include<stdio.h>
 
-#define TRUE 1
-#define FALSE 0
+#define IN_RANGE 1
+#define OUTOFF_RANGE 0
 
 typedef struct
 {
