@@ -180,40 +180,34 @@ void Test_Case_ADCCount_into_Amps()
 
 void Test_Case_ProcessSensor_ADC_data()
 {
-  int ADCdata[5] = {4095,0,-1,4096,1025}, ADC_channelID = 0;
-  int convertedAmp_value[5] = {10,65535,65535,65535,2};
+  int ADCdata[9] = {4095,0,-1,4096,1025,1050,2020,4090,1020}, ADC_channelID = 0;
+  int convertedAmp_value[9] = {10,65535,65535,65535,2,2,2,9,2};
+  int start_Range_4[3] = {2,9,10}, end_Range_4[3] = {2,0,0}, range_Counter_4[3] = {4,1,1};
   
-  for(int index = 0; index < 5; index++)
+  for(int index = 0; index < 9; index++)
   {
     ProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
     assert(convertedAmpereValue == convertedAmp_value[index]);
   }
-}
-
-void Test_Case_accumulate_ConvertedAmpValue()
-{
-  int ADCdata[NO_OF_CONVERETD_AMP_VALUE] = {4095,1025,2020,4090,1020,1050}, ADC_channelID = 0;
-  int convertedAmp_value[NO_OF_CONVERETD_AMP_VALUE] = {10,2,4,9,2,2};
   
-  noOfconverted_AmpereValue = 0;
- 
-  for(int index = 0; index < 4; index++)
+  for(int index = 0; index < 3; index++)
   {
-    ProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
-    assert(rangeof_convertedAmpValue[index] == convertedAmp_value[index]);
+    assert(current_rangeList[index].startRange == start_Range_4[index]);
+    assert(current_rangeList[index].endRange == end_Range_4[index]);
+    assert(current_rangeList[index].rangeCounter == range_Counter_4[index]); 
   }
 }
 
 void Test_Case_find_convertedAmpere_RangeList()
 {
   int convertedAmpValue = 10, no_of_values = 1;
-  int start_Range_4 = 10, end_Range_4 = 0, range_Counter_4 = 1;
+  int start_Range_5 = 10, end_Range_5 = 0, range_Counter_5 = 1;
   
     find_convertedAmpere_RangeList(&convertedAmpValue, no_of_values);
   
-    assert(current_rangeList[0].startRange == start_Range_4);
-    assert(current_rangeList[0].endRange == end_Range_4);
-    assert(current_rangeList[0].rangeCounter == range_Counter_4);  
+    assert(current_rangeList[0].startRange == start_Range_5);
+    assert(current_rangeList[0].endRange == end_Range_5);
+    assert(current_rangeList[0].rangeCounter == range_Counter_5);  
 }
 
 void Test_process_ADCdata()
