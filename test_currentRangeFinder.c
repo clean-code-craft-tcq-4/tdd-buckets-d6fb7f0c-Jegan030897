@@ -192,8 +192,10 @@ void Test_Case_ProcessSensor_ADC_data()
 
 void Test_Case_accumulate_ConvertedAmpValue()
 {
-  int ADCdata[NO_OF_CONVERETD_AMP_VALUE] = {4095,1025,2020,4090,4090,1050}, ADC_channelID = 0;
-  int convertedAmp_value[NO_OF_CONVERETD_AMP_VALUE] = {10,2,4,9,9,2};
+  int ADCdata[NO_OF_CONVERETD_AMP_VALUE] = {4095,1025,2020,4090,1020,1050}, ADC_channelID = 0;
+  int convertedAmp_value[NO_OF_CONVERETD_AMP_VALUE] = {10,2,4,9,2,2};
+  
+  noOfconverted_AmpereValue = 0;
  
   for(int index = 0; index < 4; index++)
   {
