@@ -200,7 +200,7 @@ void Test_Case_ProcessSensor_ADC_data()
 
 void Test_Case_find_convertedAmpere_RangeList()
 {
-  int convertedAmpValue[10] = {1,2,3,4,5,6,6,8,9,10}, no_of_values = 6;
+  int convertedAmpValue[10] = {1,2,3,4,5,6,6,8,9,10}, no_of_values = sizeof(convertedAmpValue)/sizeof(convertedAmpValue[0]);
   int start_Range_5[2] = {1,8}, end_Range_5[2] = {6,10}, range_Counter_5[2] = {7,3};
   
     find_convertedAmpere_RangeList(convertedAmpValue, no_of_values);
