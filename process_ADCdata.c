@@ -2,7 +2,7 @@
 #include "sensor_Config.h"
 #include "currentRangeFinder.h"
 
-int convertedAmpereValue = 0xFFFF;
+int convertedAmpereValue[NO_OF_CONVERETD_AMP_VALUE] = {0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF};
 
 const mcalConfig* received_ADC_SensorConfig;
 
@@ -28,7 +28,7 @@ int convert_ADCCount_into_Amps(int adcData)
  	return round((received_ADC_SensorConfig->sensor_AmpereRange * adcData) / (received_ADC_SensorConfig->ADC_Resolution));
 }
 
-void GetandProcessSensor_ADC_data(int adcData, int adc_channelID)
+void ProcessSensor_ADC_data(int adcData, int adc_channelID)
 {
 	int adcData_ErrorStatus;
 	
@@ -36,8 +36,16 @@ void GetandProcessSensor_ADC_data(int adcData, int adc_channelID)
 	adcData_ErrorStatus = ADC_data_AssertCheck(adcData);
 	if(adcData_ErrorStatus == IN_RANGE)
 	{
-		convertedAmpereValue = convert_ADCCount_into_Amps(adcData);
-		find_convertedAmpere_RangeList(convertedAmpereValue);
+		if(noOfconverted_AmpereValue == 6)
+		{
+			noOfconverted_AmpereValue = 0;
+			find_convertedAmpere_RangeList(convertedAmpereValue);
+		}
+		else
+		{
+			convertedAmpereValue[noOfconverted_AmpereValue] = convert_ADCCount_into_Amps(adcData);
+			++noOfconverted_AmpereValue;
+		}
 	}
 	else
 	{
@@ -45,10 +53,9 @@ void GetandProcessSensor_ADC_data(int adcData, int adc_channelID)
 	}
 }
 
-void find_convertedAmpere_RangeList(int convertedData)
+void find_convertedAmpere_RangeList(int *convertedData)
 {
-	int data = convertedData;
-	find_currentRangeList(&data, 1);	
+	find_currentRangeList(convertedData, (int)NO_OF_CONVERETD_AMP_VALUE);	
 }
 
 
