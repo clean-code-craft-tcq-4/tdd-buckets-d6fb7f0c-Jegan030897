@@ -190,6 +190,18 @@ void Test_Case_ProcessSensor_ADC_data()
   }
 }
 
+void Test_Case_accumulate_ConvertedAmpValue()
+{
+  int ADCdata[NO_OF_CONVERETD_AMP_VALUE] = {4095,1025,2020,4090,1015,1050}, ADC_channelID = 0;
+  int convertedAmp_value[NO_OF_CONVERETD_AMP_VALUE] = {10,2,4,9,2,2};
+ 
+  for(int index = 0; index < NO_OF_CONVERETD_AMP_VALUE; index++)
+  {
+    ProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
+    assert(rangeof_convertedAmpValue[index] == convertedAmp_value[index]);
+  }
+}
+
 void Test_Case_find_convertedAmpere_RangeList()
 {
   int convertedAmpValue = 10, no_of_values = 1;
@@ -208,6 +220,7 @@ void Test_process_ADCdata()
   Test_Case_ADC_data_AssertCheck();
   Test_Case_ADCCount_into_Amps();
   Test_Case_ProcessSensor_ADC_data();
+  Test_Case_accumulate_ConvertedAmpValue();
   Test_Case_find_convertedAmpere_RangeList();
 }
 
