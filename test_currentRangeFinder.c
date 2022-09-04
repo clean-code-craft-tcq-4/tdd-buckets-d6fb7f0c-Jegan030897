@@ -181,10 +181,10 @@ void Test_Case_ADCCount_into_Amps()
 void Test_Case_ProcessSensor_ADC_data()
 {
   int ADCdata[9] = {4095,0,-1,4096,1025,1050,2020,4090,1020}, ADC_channelID = 0;
-  int convertedAmp_value[9] = {10,65535,65535,65535,2,2,2,9,2};
+  int convertedAmp_value[9] = {10,65535,65535,65535,2,2,4,9,2};
   int start_Range_4[3] = {2,9,10}, end_Range_4[3] = {2,0,0}, range_Counter_4[3] = {4,1,1};
   
-  for(int index = 0; index < 7; index++)
+  for(int index = 0; index < 9; index++)
   {
     ProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
     assert(convertedAmpereValue == convertedAmp_value[index]);
