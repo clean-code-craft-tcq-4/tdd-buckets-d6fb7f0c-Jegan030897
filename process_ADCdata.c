@@ -39,12 +39,12 @@ void ProcessSensor_ADC_data(int adcData, int adc_channelID)
 	if(adcData_ErrorStatus == IN_RANGE)
 	{
 		convertedAmpereValue = convert_ADCCount_into_Amps(adcData);
+		accumulate_ConvertedAmpValue(convertedAmpereValue);
 	}
 	else
 	{
 		convertedAmpereValue = 0xFFFF;
 	}
-	accumulate_ConvertedAmpValue(convertedAmpereValue);
 }
 
 void accumulate_ConvertedAmpValue(int convertedValue)
