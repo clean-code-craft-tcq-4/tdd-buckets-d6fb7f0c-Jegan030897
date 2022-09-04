@@ -190,7 +190,7 @@ void Test_Case_ProcessSensor_ADC_data()
     assert(convertedAmpereValue == convertedAmp_value[index]);
   }
   
-  for(int index = 0; index < 4; index++)
+  for(int index = 0; index < 1; index++)
   {
     assert(current_rangeList[index].startRange == start_Range_4[index]);
     assert(current_rangeList[index].endRange == end_Range_4[index]);
