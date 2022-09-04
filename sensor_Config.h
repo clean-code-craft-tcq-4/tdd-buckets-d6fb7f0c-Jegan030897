@@ -3,7 +3,10 @@
 #define IN_RANGE 1
 #define OUTOFF_RANGE 0
 
-extern int convertedAmpereValue;
+#define NO_OF_CONVERETD_AMP_VALUE	6
+
+extern int convertedAmpereValue[NO_OF_CONVERETD_AMP_VALUE];
+static int noOfconverted_AmpereValue = 0;
 
 typedef struct
 {
@@ -15,5 +18,5 @@ void update_sensorConfigObj(int adc_channelID);
 const mcalConfig* get_sensorConfig(int adc_channelID);
 int ADC_data_AssertCheck(int adcData);
 int convert_ADCCount_into_Amps(int adcData);
-void GetandProcessSensor_ADC_data(int adcData, int adc_channelID);
-void find_convertedAmpere_RangeList(int convertedData);
+void ProcessSensor_ADC_data(int adcData, int adc_channelID);
+void find_convertedAmpere_RangeList(int *convertedData);
