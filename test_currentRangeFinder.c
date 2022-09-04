@@ -182,35 +182,35 @@ void Test_Case_ProcessSensor_ADC_data()
 {
   int ADCdata[9] = {4095,0,-1,4096,1025,1050,2020,4090,1020}, ADC_channelID = 0;
   int convertedAmp_value[9] = {10,65535,65535,65535,2,2,4,9,2};
-  //int start_Range_4[4] = {2,4,9,10}, end_Range_4[4] = {2,0,0,0}, range_Counter_4[4] = {3,1,1,1};
+  int start_Range_4[3] = {2,4,9}, end_Range_4[3] = {2,0,10}, range_Counter_4[3] = {3,1,2};
   
-  for(int index = 0; index < 9; index++)
+  for(int index = 0; index < 3; index++)
   {
     ProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
     assert(convertedAmpereValue == convertedAmp_value[index]);
   }
   
-  /*for(int index = 0; index < 4; index++)
+  for(int index = 0; index < 4; index++)
   {
     assert(current_rangeList[index].startRange == start_Range_4[index]);
     assert(current_rangeList[index].endRange == end_Range_4[index]);
     assert(current_rangeList[index].rangeCounter == range_Counter_4[index]); 
-  }*/
+  }
 }
 
 void Test_Case_find_convertedAmpere_RangeList()
 {
-  int convertedAmpValue[6] = {10,4,9,2,2,2}, no_of_values = 6;
-  int start_Range_5[3] = {2,4,9}, end_Range_5[3] = {2,0,10}, range_Counter_5[3] = {3,1,2};
+  int convertedAmpValue[10] = {1,2,3,4,5,6,6,8,9,10}, no_of_values = 6;
+  int start_Range_5[2] = {1,8}, end_Range_5[2] = {6,10}, range_Counter_5[2] = {7,3};
   
     find_convertedAmpere_RangeList(convertedAmpValue, no_of_values);
     
-  for(int index = 0; index < 3; index++)
-  {
-    assert(current_rangeList[index].startRange == start_Range_5[index]);
-    assert(current_rangeList[index].endRange == end_Range_5[index]);
-    assert(current_rangeList[index].rangeCounter == range_Counter_5[index]); 
-  }
+    for(int index = 0; index < 2; index++)
+    {
+      assert(current_rangeList[index].startRange == start_Range_5[index]);
+      assert(current_rangeList[index].endRange == end_Range_5[index]);
+      assert(current_rangeList[index].rangeCounter == range_Counter_5[index]); 
+    }
 }
 
 void Test_process_ADCdata()
