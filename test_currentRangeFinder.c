@@ -195,7 +195,7 @@ void Test_Case_accumulate_ConvertedAmpValue()
   int ADCdata[NO_OF_CONVERETD_AMP_VALUE] = {4095,1025,2020,4090,1015,1050}, ADC_channelID = 0;
   int convertedAmp_value[NO_OF_CONVERETD_AMP_VALUE] = {10,2,4,9,2,2};
  
-  for(int index = 0; index < 2; index++)
+  for(int index = 0; index < 4; index++)
   {
     ProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
     assert(rangeof_convertedAmpValue[index] == convertedAmp_value[index]);
