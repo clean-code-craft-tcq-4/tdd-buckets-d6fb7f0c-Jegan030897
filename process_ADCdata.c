@@ -44,15 +44,19 @@ void ProcessSensor_ADC_data(int adcData, int adc_channelID)
 	{
 		convertedAmpereValue = 0xFFFF;
 	}
-	
-	if(convertedAmpereValue != 0xFFFF && noOfconverted_AmpereValue < NO_OF_CONVERETD_AMP_VALUE)
+	accumulate_ConvertedAmpValue(convertedAmpereValue);
+}
+
+void accumulate_ConvertedAmpValue(int convertedValue)
+{
+	if(convertedValue != 0xFFFF && noOfconverted_AmpereValue < NO_OF_CONVERETD_AMP_VALUE)
 	{
-		rangeof_convertedAmpValue[noOfconverted_AmpereValue] = convertedAmpereValue;
+		rangeof_convertedAmpValue[noOfconverted_AmpereValue] = convertedValue;
 		++noOfconverted_AmpereValue;
 		
 		if(noOfconverted_AmpereValue == 5)
 		{
-			find_convertedAmpere_RangeList(convertedAmpereValue, noOfconverted_AmpereValue);
+			find_convertedAmpere_RangeList(rangeof_convertedAmpValue, noOfconverted_AmpereValue);
 			noOfconverted_AmpereValue = 0;
 		}
 	}
