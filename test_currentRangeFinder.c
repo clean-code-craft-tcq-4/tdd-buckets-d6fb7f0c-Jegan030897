@@ -178,24 +178,24 @@ void Test_Case_ADCCount_into_Amps()
   }
 }
 
-void Test_Case_GetandProcessSensor_ADC_data()
+void Test_Case_ProcessSensor_ADC_data()
 {
   int ADCdata[5] = {4095,0,-1,4096,1025}, ADC_channelID = 0;
   int convertedAmp_value[5] = {10,65535,65535,65535,2};
   
   for(int index = 0; index < 5; index++)
   {
-    GetandProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
+    ProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
     assert(convertedAmpereValue == convertedAmp_value[index]);
   }
 }
 
 void Test_Case_find_convertedAmpere_RangeList()
 {
-  int convertedAmpValue = 10;
+  int convertedAmpValue = 10, no_of_values = 1;
   int start_Range_4 = 10, end_Range_4 = 0, range_Counter_4 = 1;
   
-    find_convertedAmpere_RangeList(convertedAmpValue);
+    find_convertedAmpere_RangeList(convertedAmpValue, no_of_values);
   
     assert(current_rangeList[0].startRange == start_Range_4);
     assert(current_rangeList[0].endRange == end_Range_4);
@@ -207,7 +207,7 @@ void Test_process_ADCdata()
   Test_Case_GetSensorConfig();
   Test_Case_ADC_data_AssertCheck();
   Test_Case_ADCCount_into_Amps();
-  Test_Case_GetandProcessSensor_ADC_data();
+  Test_Case_ProcessSensor_ADC_data();
   Test_Case_find_convertedAmpere_RangeList();
 }
 
