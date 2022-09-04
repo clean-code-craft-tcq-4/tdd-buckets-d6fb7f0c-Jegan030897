@@ -3,6 +3,7 @@
 #include "currentRangeFinder.h"
 
 int convertedAmpereValue[NO_OF_CONVERETD_AMP_VALUE] = {0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF};
+static int noOfconverted_AmpereValue = 0;
 
 const mcalConfig* received_ADC_SensorConfig;
 
