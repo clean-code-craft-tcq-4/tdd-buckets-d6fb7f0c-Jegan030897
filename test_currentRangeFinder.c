@@ -195,7 +195,7 @@ void Test_Case_find_convertedAmpere_RangeList()
   int convertedAmpValue = 10, no_of_values = 1;
   int start_Range_4 = 10, end_Range_4 = 0, range_Counter_4 = 1;
   
-    find_convertedAmpere_RangeList(convertedAmpValue, no_of_values);
+    find_convertedAmpere_RangeList(&convertedAmpValue, no_of_values);
   
     assert(current_rangeList[0].startRange == start_Range_4);
     assert(current_rangeList[0].endRange == end_Range_4);
