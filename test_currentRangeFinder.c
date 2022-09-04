@@ -201,11 +201,11 @@ void Test_Case_ProcessSensor_ADC_data()
 void Test_Case_find_convertedAmpere_RangeList()
 {
   int convertedAmpValue[6] = {10,4,9,2,2,2}, no_of_values = 6;
-  int start_Range_5[4] = {2,4,9,10}, end_Range_5[4] = {2,0,0,0}, range_Counter_5[4] = {3,1,1,1};
+  int start_Range_5[3] = {2,4,9}, end_Range_5[3] = {2,0,10}, range_Counter_5[3] = {3,1,2};
   
     find_convertedAmpere_RangeList(convertedAmpValue, no_of_values);
     
-  for(int index = 0; index < 4; index++)
+  for(int index = 0; index < 3; index++)
   {
     assert(current_rangeList[index].startRange == start_Range_5[index]);
     assert(current_rangeList[index].endRange == end_Range_5[index]);
