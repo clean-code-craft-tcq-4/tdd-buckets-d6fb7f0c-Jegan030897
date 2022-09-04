@@ -19,4 +19,5 @@ const mcalConfig* get_sensorConfig(int adc_channelID);
 int ADC_data_AssertCheck(int adcData);
 int convert_ADCCount_into_Amps(int adcData);
 void ProcessSensor_ADC_data(int adcData, int adc_channelID);
+void accumulate_ConvertedAmpValue(int convertedValue);
 void find_convertedAmpere_RangeList(int *convertedData, int no_of_convertedValues);
