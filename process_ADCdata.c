@@ -54,7 +54,7 @@ void accumulate_ConvertedAmpValue(int convertedValue)
 		rangeof_convertedAmpValue[noOfconverted_AmpereValue] = convertedValue;
 		++noOfconverted_AmpereValue;
 		
-		if(noOfconverted_AmpereValue == 5)
+		if(noOfconverted_AmpereValue == 6)
 		{
 			find_convertedAmpere_RangeList(rangeof_convertedAmpValue, noOfconverted_AmpereValue);
 			noOfconverted_AmpereValue = 0;
