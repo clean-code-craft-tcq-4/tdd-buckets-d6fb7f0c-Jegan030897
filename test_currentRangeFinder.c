@@ -184,6 +184,13 @@ void Test_Case_ProcessSensor_ADC_data()
   int convertedAmp_value[9] = {10,65535,65535,65535,2,2,4,9,2};
   int start_Range_4[4] = {2,4,9,10}, end_Range_4[4] = {2,0,0,0}, range_Counter_4[4] = {3,1,1,1};
   
+  for(int index = 0; index < 4; index++)
+  {
+    current_rangeList[index].startRange == 0;
+    current_rangeList[index].endRange == 0;
+    current_rangeList[index].rangeCounter == 0; 
+  }
+  
   for(int index = 0; index < 9; index++)
   {
     ProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
