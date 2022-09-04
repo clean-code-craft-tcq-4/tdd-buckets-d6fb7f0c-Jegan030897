@@ -216,7 +216,6 @@ void Test_process_ADCdata()
   Test_Case_ADC_data_AssertCheck();
   Test_Case_ADCCount_into_Amps();
   Test_Case_ProcessSensor_ADC_data();
-  Test_Case_accumulate_ConvertedAmpValue();
   Test_Case_find_convertedAmpere_RangeList();
 }
 
