@@ -184,7 +184,7 @@ void Test_Case_ProcessSensor_ADC_data()
   int convertedAmp_value[9] = {10,65535,65535,65535,2,2,2,9,2};
   int start_Range_4[3] = {2,9,10}, end_Range_4[3] = {2,0,0}, range_Counter_4[3] = {4,1,1};
   
-  for(int index = 0; index < 5; index++)
+  for(int index = 0; index < 6; index++)
   {
     ProcessSensor_ADC_data(ADCdata[index], ADC_channelID);
     assert(convertedAmpereValue == convertedAmp_value[index]);
