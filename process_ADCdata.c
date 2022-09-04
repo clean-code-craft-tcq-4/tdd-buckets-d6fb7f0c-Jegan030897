@@ -49,7 +49,7 @@ void ProcessSensor_ADC_data(int adcData, int adc_channelID)
 	}
 	else
 	{
-		convertedAmpereValue = 0xFFFF;
+		convertedAmpereValue[noOfconverted_AmpereValue] = 0xFFFF;
 	}
 }
 
